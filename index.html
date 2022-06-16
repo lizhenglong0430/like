@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三连</title>
+    <link rel="stylesheet" href="iconfont.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    .toupiao{
+        position: absolute;
+        width: 225px;
+        height: 110px;
+        background-color: rgba(50,50,51,0.9);
+        top: 50%;
+        left: 100px;
+        transform: translateY(-50%);
+        border-radius: 10px;
+        padding: 15px 10px;
+    }
+    .toupiao .title{
+        color: #fff;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 0px;
+    }
+    .toupiao .choose{
+        background-color: #fff;
+        height: 33px;
+        margin-top: 10px;
+        line-height: 33px;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    .choose .number{
+        background-color: #EBEBEB;
+        padding: 12px;
+    }
+    .cancel{
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: rgb(50,50,51);
+        top: -23px;
+        right: -23px;
+        border-radius: 100%;
+        border: 3px solid #C4C6C7;
+    }
+    .cancel::before,
+    .cancel::after{
+        position: absolute;
+        content: "";
+        width: 60%;
+        height: 2px;
+        top: 45%;
+        left: 22%;
+        background-color: #C4C6C7;
+    }
+    .cancel::before{
+        transform: rotate(45deg);
+    }
+    .cancel::after{
+        transform: rotate(-45deg);
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="guanzhu">
+            <span class="wenzi">+ 关注</span>
+            <span class="wenzi">已关注</span>
+        </div>
+        <div class="caozuo">
+            <div class="icon">
+                <i class="iconfont icon-dianzan"></i>
+                <div class="oval-bar-box-little">
+                    <div class="oval-bar-little"></div>
+                    <div class="oval-bar-little"></div>
+                    <div class="oval-bar-little"></div>
+                    <div class="oval-bar-little"></div>
+                </div>
+                <div class="oval-bar-box-larger">
+                    <div class="oval-bar-larger"></div>
+                    <div class="oval-bar-larger"></div>
+                    <div class="oval-bar-larger"></div>
+                    <div class="oval-bar-larger"></div>
+                </div>
+            </div>
+            <div class="icon">
+                <i class="iconfont icon-toubi"></i>
+                <div class="oval-bar-box-little">
+                    <div class="oval-bar-little"></div>
+                    <div class="oval-bar-little"></div>
+                    <div class="oval-bar-little"></div>
+                    <div class="oval-bar-little"></div>
+                </div>
+                <div class="oval-bar-box-larger">
+                    <div class="oval-bar-larger"></div>
+                    <div class="oval-bar-larger"></div>
+                    <div class="oval-bar-larger"></div>
+                    <div class="oval-bar-larger"></div>
+                </div>
+            </div>
+            <div class="icon">
+                <i class="iconfont icon-shoucang"></i>
+                <div class="oval-bar-box-little">
+                    <div class="oval-bar-little"></div>
+                    <div class="oval-bar-little"></div>
+                    <div class="oval-bar-little"></div>
+                    <div class="oval-bar-little"></div>
+                </div>
+                <div class="oval-bar-box-larger">
+                    <div class="oval-bar-larger"></div>
+                    <div class="oval-bar-larger"></div>
+                    <div class="oval-bar-larger"></div>
+                    <div class="oval-bar-larger"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="toupiao">
+        <span class="title">你被欺骗到了吗？</span>
+        <div class="choose">
+            <span class="number">1</span>
+            <span class="content">被骗到了</span>
+        </div>
+        <div class="choose">
+            <span class="number">2</span>
+            <span class="content">没有被骗到</span>
+        </div>
+        <span class="cancel"></span>
+    </div>
+</body>
+
+</html>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+    const guanzhu = $(".guanzhu")
+    const icon = $(".icon")
+    const ovalBarBoxLittle = $(".oval-bar-box-little")
+    const ovalBarBoxLarger = $(".oval-bar-box-larger")
+    guanzhu.on("click", function () {
+        guanzhu.toggleClass("active")
+            setTimeout(() => {
+                icon.toggleClass("active")
+                ovalBarBoxLittle.toggleClass("active")
+                ovalBarBoxLarger.toggleClass("active")
+            }, 1000)
+    })
+</script>
